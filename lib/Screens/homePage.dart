@@ -19,16 +19,6 @@ class _HomepageState extends State<Homepage> {
     getAllData = APIhelpers.apihelpers.fetchData();
   }
 
-  // void loadJson() {
-  //   jsonData = rootBundle.toString("assets/JSON/allData.dart");
-  // }
-  //
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   loadJson();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,14 +51,19 @@ class _HomepageState extends State<Homepage> {
                   crossAxisSpacing: 10,
                 ),
                 itemBuilder: (context, i) {
-                  return Container(
-                    height: 300,
-                    width: 300,
-                    color: Colors.red,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: NetworkImage(
-                          data[i].image,
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushNamed('detailPage');
+                    },
+                    child: Container(
+                      height: 300,
+                      width: 300,
+                      color: Colors.red,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            data[i].image,
+                          ),
                         ),
                       ),
                     ),

@@ -1,4 +1,6 @@
+import 'package:adv_exam/Screens/detailPage.dart';
 import 'package:adv_exam/Screens/homePage.dart';
+import 'package:adv_exam/Screens/splashScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -6,7 +8,9 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => Homepage(),
+        '/': (context) => Splashscreen(),
+        'homepage': (context) => Homepage(),
+        'detailPage': (context) => DetailPage(),
       },
     ),
   );

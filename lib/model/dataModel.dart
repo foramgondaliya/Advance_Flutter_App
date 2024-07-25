@@ -6,6 +6,6 @@ class allDataModel {
   allDataModel({required this.image});
 
   factory allDataModel.fromMap({required Map data}) {
-    return allDataModel(image: "data");
+    return allDataModel(image: data['image']);
   }
 }
